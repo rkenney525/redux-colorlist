@@ -1,11 +1,13 @@
 version: 2 
 jobs:
-  build:
+  build_app:
     working_directory: ~/app
     docker:
     - image: circleci/node:lts-browsers-legacy
     steps:
     - checkout
+    - restore_cache:
+        key: dependency-cache-{{ checksum "package-lock.json" }}
     - run:
         name: install-npm
         command: npm install
@@ -15,7 +17,10 @@ jobs:
           - ./node_modules
     - run:
         name: build
-        command: npx create-react-app redux-colorlist
+        command: npm build
     - run:
         name: test
         command: npm run jasmine
+    - run:
+        name: debug
+        command: ls -la
