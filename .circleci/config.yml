@@ -36,10 +36,10 @@ jobs:
         key: app-build
     - run:
         name: docker-build
-        command: docker build -t redux-colorlist:$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM .
+        command: docker build -t rkenney525/redux-colorlist:$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM .
     - run:
         name: docker-push
-        command: docker push redux-colorlist:$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
+        command: docker push rkenney525/redux-colorlist:$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
 workflows:
   version: 2
   meesa_workflow:
