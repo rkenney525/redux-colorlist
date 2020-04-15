@@ -22,8 +22,8 @@ jobs:
         name: test
         command: npm run jasmine
     - save_cache:
-      key: app-build
-      paths:
+        key: app-build
+        paths:
         - ./build
   build_docker:
     working_directory: ~/app
@@ -31,7 +31,7 @@ jobs:
     - image: docker:17.05.0-ce-git
     steps:
     - restore_cache:
-      key: app-build
+        key: app-build
     - run:
         name: docker-build
         command: docker build -t redux-colorlist:$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM .
