@@ -1,3 +1,3 @@
-FROM nginx:l.17
+FROM nginx:1.17
 
 COPY build /usr/share/nginx/html
