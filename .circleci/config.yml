@@ -24,3 +24,8 @@ jobs:
     - run:
         name: debug
         command: ls -la
+workflows:
+  version: 2
+  meesa_workflow:
+    jobs:
+      - build_app
