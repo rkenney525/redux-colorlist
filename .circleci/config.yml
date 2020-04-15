@@ -41,4 +41,6 @@ workflows:
   meesa_workflow:
     jobs:
       - build_app
-      - build_docker
+      - build_docker:
+          requires:
+          - build_app
