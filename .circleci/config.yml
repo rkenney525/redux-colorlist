@@ -17,7 +17,7 @@ jobs:
           - ./node_modules
     - run:
         name: build
-        command: npm build
+        command: npm run-script build
     - run:
         name: test
         command: npm run jasmine
